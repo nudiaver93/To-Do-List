@@ -1,20 +1,30 @@
-// Add interactivity so the user can manage daily tasks
-
 var taskInput = document.getElementById('new-task');
 var addButton = document.getElementById('addbutton');
 var incompleteTasksHolder = document.getElementById('incomplete-tasks');
 var completedTasksHolder = document.getElementById('completed-tasks');
-// Add a new task
-	// Create a task when button is pressed (list item)
+
+var createNewTaskElement = function(taskString){
+
+	var listItem = document.createElement('li');
+	 	//check box 
+	var checkBox = document.createElement('input');
+	 	//label 
+	var label = document.createElement('label');
+	 	//text input 
+	var editInput = document.createElement('input');
+	 	//edit button 
+	var editButton = document.createElement('button');
+	 	//delete button
+	var deleteButton = document.createElement('button');
+	 	//each element needs to be modified and appended
+};
+
 var addTask = function() {
 	console.log('Add task...');
-	// New list item with:
-	 	//check box 
-	 	//label 
-	 	//text input 
-	 	//edit button 
-	 	//delete button
-	 	//each element needs to be modified and appended
+
+	var listItem = createNewTaskElement("Some task element");
+
+	return listItem
 };
 
 // Edit an existing task
