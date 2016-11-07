@@ -54,10 +54,17 @@ var taskIncomplete = function(){
 };
 
 var bindTaskEvents = function(taskListItem, checkBoxEventHandler) {
-		// select it's children
+	console.log('bind list item events');
+
+		var checkBox = taskListItem.querySelector("input[type=checkbox]");
+		var editButton = taskListItem.querySelector("button.edit");
+		var deleteButton =  taskListItem.querySelector("button.delete");
 		// bind editTask to edit button
+		editButton.onclick = editTask;
 		// bind deleteTask to delete button
+		deleteButton.onclick = deleteTask;
 		// bind taskCompleted to checkbox
+		checkBox.onchange = checkBoxEventHandler;
 }
 
 
@@ -68,7 +75,7 @@ for (i = 0; i < incompleteTasksHolder.children.length; i++) {
 }
 
 for (i = 0; i < completedTasksHolder.children.length; i++) {
-	bindTaskEvents(incompleteTasksHolder.children[i], taskIncomplete);
+	bindTaskEvents(completedTasksHolder.children[i], taskIncomplete);
 }
 
 // cycle over incompleteTaskHolder ul list items
